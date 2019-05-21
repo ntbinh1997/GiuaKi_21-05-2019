@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Quản lý công nhân</string>
+    <string name="title_activity_cong_nhan">CongNhan</string>
+    <string name="title_activity_san_pham">SanPham</string>
+    <string name="title_activity_phan_xuong">PhanXuong</string>
+    <string name="radio_male">Nam</string>
+    <string name="radio_female">Nữ</string>
+    <string name="spin_name">Tên nhân viên</string>
+</resources>
