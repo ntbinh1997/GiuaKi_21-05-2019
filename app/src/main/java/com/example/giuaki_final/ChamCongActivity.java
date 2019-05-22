@@ -87,6 +87,7 @@ public class ChamCongActivity extends AppCompatActivity {
                 }
                 capNhatDSCC();
                 setAdapter();
+                createNew();
             }
         });
 

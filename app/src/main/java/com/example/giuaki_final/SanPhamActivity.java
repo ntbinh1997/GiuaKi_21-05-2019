@@ -56,6 +56,7 @@ public class SanPhamActivity extends AppCompatActivity {
                 sanPhamDAO.themSanPham(sanPham);
                 capNhatDSSP();
                 setAdapter();
+                createNew();
             }
         });
 

@@ -37,8 +37,8 @@ public class TinhCongActivity extends AppCompatActivity  {
         categories.add("12");
 
 
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this,R.layout.support_simple_spinner_dropdown_item,categories);
-        arrayAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this,R.layout.spinner_item,categories);
+        arrayAdapter.setDropDownViewResource(R.layout.spinner_item);
         spinner.setAdapter(arrayAdapter);
     }
 }

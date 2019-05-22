@@ -98,6 +98,7 @@ public class PhanXuongActivity extends AppCompatActivity {
                 phanXuongDAO.themPhanXuong(phanXuong);
                 capNhatDSPX();
                 setAdapter();
+                createNew();
             }
         });
 

@@ -19,8 +19,9 @@
 
     <style
         name="spinnerDropDownItemStyle"
-        parent="android:TextAppearance.Widget.TextView.SpinnerItem">
-
+        parent="android:TextAppearance.Widget.TextView.SpinnerItem"
+        size="25dp">
     </style>
+
 
 </resources>

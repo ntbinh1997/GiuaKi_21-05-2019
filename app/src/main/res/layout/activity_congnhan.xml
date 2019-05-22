@@ -125,7 +125,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Thêm" />
+                android:text="Thêm"
+                android:enabled="false"/>
 
             <Button
                 android:background="@drawable/button_green"

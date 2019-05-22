@@ -8,70 +8,83 @@
     android:layout_marginBottom="10dp">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10dp"
-            android:layout_marginRight="5dp"
-            >
-            <TextView
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Tháng"
-                android:textSize="25dp"/>
-            <Spinner xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/spn_thang"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="2"
-                style="@style/spinnerDropDownItemStyle"
-                android:maxLines="1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10dp"
-            android:layout_marginRight="5dp">
-            <TextView
-                android:layout_weight="1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Nhân viên số "
-                android:textSize="25dp"/>
-            <Spinner xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/spn_nv"
-                android:layout_weight="2"
-                style="@style/spinnerDropDownItemStyle"
-                android:maxLines="1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
+            android:background="@color/lightGray"
+            android:padding="10dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center">
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="5dp"
+                >
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Tháng"
+                    android:textSize="25dp"
+                    android:textColor="@color/design_default_color_primary_dark"/>
+                <Spinner xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/spn_thang"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="2"
+                    style="@style/spinnerDropDownItemStyle"
+                    android:maxLines="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/design_default_color_primary_dark"/>/>
+            </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="5dp">
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Nhân viên số "
+                    android:textSize="25dp"
+                    android:textColor="@color/design_default_color_primary_dark"/>/>
+                <Spinner xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/spn_nv"
+                    android:layout_weight="2"
+                    style="@style/spinnerDropDownItemStyle"
+                    android:maxLines="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/design_default_color_primary_dark"/>/>
 
+            </LinearLayout>
 
-            <Button
-                android:id="@+id/btn_tinhcong"
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Tính công"
-                android:background="@drawable/button_blue"/>
+                android:layout_marginBottom="15dp">
+                <Button
+                    android:id="@+id/btn_tinhcong"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Tính công"
+                    android:padding="10dp"
+                    android:textSize="25dp"
+                    android:background="@drawable/button_blue"/>
+            </LinearLayout>
         </LinearLayout>
+
         <LinearLayout
+            android:background="@color/text"
             android:padding="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -79,34 +92,38 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp">
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
                 <TextView
+                    android:layout_marginBottom="5dp"
                     android:layout_weight="2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="19dp"
+                    android:textSize="25dp"
                     android:text="Tên Nhân viên: "/>
                 <TextView
                     android:id="@+id/tv_tencn"
-                    android:textSize="19dp"
+                    android:textSize="25dp"
                     android:text="Tên nó"
                     android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
             <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp">
                 <TextView
+                    android:layout_marginBottom="5dp"
                     android:layout_weight="2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="19dp"
+                    android:textSize="25dp"
                     android:text="Số giờ làm: "/>
                 <TextView
                     android:id="@+id/tv_giolam"
-                    android:textSize="19dp"
+                    android:textSize="25dp"
                     android:text="Tên nó"
                     android:layout_weight="1"
                     android:layout_width="match_parent"
@@ -114,18 +131,20 @@
 
             </LinearLayout>
             <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp">
                 <TextView
+                    android:layout_marginBottom="5dp"
                     android:layout_weight="2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="19dp"
+                    android:textSize="25dp"
                     android:text="Lương : "/>
                 <TextView
                     android:id="@+id/tv_tien"
-                    android:textSize="19dp"
+                    android:textSize="25dp"
                     android:text="Tên nó"
                     android:layout_weight="1"
                     android:layout_width="match_parent"

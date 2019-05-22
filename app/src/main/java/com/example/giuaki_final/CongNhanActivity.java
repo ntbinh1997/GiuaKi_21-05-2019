@@ -4,6 +4,8 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -37,11 +39,13 @@ public class CongNhanActivity extends AppCompatActivity {
     private Button btnCapNhat;
     private ListView lvCongNhan;
     private DBManager dbManager;
+    private Button btnThoat;
     private CongNhanAdapter congNhanAdapter;
     private CongNhanDAO congNhanDAO;
     private List<CongNhan> danhSachCN;
     private PhanXuongDAO phanXuongDAO;
     private RadioGroup radioSex;
+    private boolean statusAdd = true;
 
     private int maPX;
 
@@ -86,6 +90,7 @@ public class CongNhanActivity extends AppCompatActivity {
                 }
                 capNhatDSCN();
                 setAdapter();
+                createStatus();
             }
         });
         lvCongNhan.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -101,6 +106,14 @@ public class CongNhanActivity extends AppCompatActivity {
                 edtLuongCB.setText(congNhan.getmLuongCB()+"");
                 btnThem.setEnabled(false);
                 btnCapNhat.setEnabled(true);
+                btnThoat.setEnabled(true);
+                statusAdd=false;
+            }
+        });
+        btnThoat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createStatus();
             }
         });
         btnCapNhat.setOnClickListener(new View.OnClickListener() {
@@ -120,10 +133,93 @@ public class CongNhanActivity extends AppCompatActivity {
                 if(result>0){
                     capNhatDSCN();
                 }
-                btnThem.setEnabled(true);
-                btnCapNhat.setEnabled(false);
+                createStatus();
             }
         });
+
+        edtHo.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                checkNull();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                checkNull();
+            }
+        });
+
+        edtTen.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                checkNull();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                checkNull();
+            }
+        });
+
+
+        edtNamSinh.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                checkNull();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                checkNull();
+            }
+        });
+
+
+        edtLuongCB.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                checkNull();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                checkNull();
+            }
+        });
+
+
+        edtNgayNV.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                checkNull();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                checkNull();
+            }
+        });
+
 
         lvCongNhan.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
@@ -174,6 +270,7 @@ public class CongNhanActivity extends AppCompatActivity {
         btnCapNhat = findViewById(R.id.btn_capnhat);
         lvCongNhan = findViewById(R.id.lv_congnhan);
         radioSex = findViewById(R.id.radioSex);
+        btnThoat = findViewById(R.id.btn_thoat);
     }
     private void setAdapter() {
         if (congNhanAdapter == null) {
@@ -201,5 +298,26 @@ public class CongNhanActivity extends AppCompatActivity {
         if(congNhanAdapter!= null){
             congNhanAdapter.notifyDataSetChanged();
         }
+    }
+    public void checkNull(){
+        if(edtHo.getText().length() != 0 && edtTen.getText().length() != 0&& edtLuongCB.getText().length() != 0&& edtNamSinh.getText().length() != 0&& edtNgayNV.getText().length() != 0){
+            btnThem.setEnabled(statusAdd);
+            btnThoat.setEnabled(!statusAdd);
+        }else{
+            btnThem.setEnabled(false);
+            btnThoat.setEnabled(false);
+        }
+    }
+    public void createStatus (){
+        edtTen.setText("");
+        edtHo.setText("");
+        edtNgayNV.setText("");
+        edtLuongCB.setText("");
+        edtMaCN.setText("");
+        edtNamSinh.setText("");
+        statusAdd=!statusAdd;
+        btnThoat.setEnabled(false);
+        btnThem.setEnabled(false);
+        btnCapNhat.setEnabled(false);
     }
 }
